@@ -7,11 +7,11 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "turtle_sim_teleop");
+  ros::init(argc, argv, "turtle_teleoperacao_teclado");
 
   ros::NodeHandle n;
 
-  ros::Publisher chatter_pub = n.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 1000);
+  ros::Publisher pub = n.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 1000);
 
   ros::Rate loop_rate(10);
 
@@ -22,35 +22,34 @@ int main(int argc, char **argv)
   while (ros::ok() && tecla != 'q')
   {
     if (kbhit())
-    	//cin >> tecla;
         tecla = getchar();
 
    if (tecla == 'w'){
 	msg.linear.x = 0.5;
 	msg.angular.z = 0;
-	ROS_INFO("Frente\n");
+	ROS_INFO("Frente");
 	}
    if (tecla == 's'){
         msg.linear.x = -0.5;
 	msg.angular.z = 0;
-	ROS_INFO("Traz\n");
+	ROS_INFO("Traz");
 	}
    if (tecla == 'a'){
         msg.angular.z = 0.5;
-        ROS_INFO("Esquerda\n");
+        ROS_INFO("Esquerda");
         }
    if (tecla == 'd'){
         msg.angular.z = -0.5;
-        ROS_INFO("Direita\n");
+        ROS_INFO("Direita");
         }
   if (tecla == 'q'){
 	msg.linear.x = 0;
         msg.angular.z = 0;
-        ROS_INFO("Parado\n");
+        ROS_INFO("Parado");
         }
 
 
-    chatter_pub.publish(msg);
+    pub.publish(msg);
 
     ros::spinOnce();
 

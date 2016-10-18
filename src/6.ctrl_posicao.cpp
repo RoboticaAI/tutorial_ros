@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
   ros::Publisher pub = n.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 1000);
-  ros::Subscriber sub = n.subscribe("/turtle1/pose", 1000, subCallback);
+  ros::Subscriber sub = n.subscribe("turtle1/pose", 1000, subCallback);
 
   ros::Rate loop_rate(10);
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     float Kpos = 10, Korie = 15;
     float angulo;
 
-    cout << "X>>";
+    cout << "Digite a posicao\nX>>";
     cin >> posdesejada[0];
 
     cout << "Y>>";
@@ -43,8 +43,6 @@ int main(int argc, char **argv)
 
     ros::spinOnce();
 
-
-    //ROS_INFO("%f %f %f %f", posdesejada[0],posdesejada[1],feedback.x,feedback.y);
 
     angulo = atan2(posdesejada[1]-feedback.y,posdesejada[0]-feedback.x); 
     ROS_WARN("angulo>>%f\n",angulo);
@@ -87,9 +85,6 @@ int main(int argc, char **argv)
 
 	}
         ROS_WARN("...Posicao alcancada...");
-
-
   }
-
   return 0;
 }

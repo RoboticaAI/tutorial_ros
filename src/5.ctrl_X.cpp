@@ -23,9 +23,11 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
   ros::Publisher pub = n.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 1000);
-  ros::Subscriber sub = n.subscribe("/turtle1/pose", 1000, subCallback);
+  ros::Subscriber sub = n.subscribe("turtle1/pose", 1000, subCallback);
 
   ros::Rate loop_rate(10);
+
+  system("rosservice call reset");
 
   if (ros::ok())
   {
@@ -34,7 +36,7 @@ int main(int argc, char **argv)
     float tolerance = 0.01;
     float Kpos = 10;
 
-    cout << "X>>";
+    cout << "Digite a posicao\nX>>";
     cin >> desejado;
 
     while (abs(erro) > tolerance) {

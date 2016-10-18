@@ -5,11 +5,11 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "talker");
+  ros::init(argc, argv, "exemplo_publisher");
 
   ros::NodeHandle n;
 
-  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  ros::Publisher pub = n.advertise<std_msgs::String>("chatter", 1000);
 
   ros::Rate loop_rate(10);
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 
     ROS_INFO("[Enviado] %s", msg.data.c_str());
 
-    chatter_pub.publish(msg);
+    pub.publish(msg);
 
     ros::spinOnce();
 

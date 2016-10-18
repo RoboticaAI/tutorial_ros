@@ -197,9 +197,13 @@ target_link_libraries(2.subscrever ${catkin_LIBRARIES})
 add_executable(3.teleoperacao src/3.teleop.cpp)
 target_link_libraries(3.teleoperacao ${catkin_LIBRARIES})
 
-add_executable(4.controleX src/4.ctrl_X.cpp)
-target_link_libraries(4.controleX ${catkin_LIBRARIES})
+add_executable(4.controleVelocidade src/4.ctrl_velocidade.cpp)
+target_link_libraries(4.controleVelocidade ${catkin_LIBRARIES})
 
-add_executable(5.controlePosicao src/5.ctrl_posicao.cpp)
-target_link_libraries(5.controlePosicao ${catkin_LIBRARIES})
+
+add_executable(5.controleX src/5.ctrl_X.cpp)
+target_link_libraries(5.controleX ${catkin_LIBRARIES})
+
+add_executable(6.controlePosicao src/6.ctrl_posicao.cpp)
+target_link_libraries(6.controlePosicao ${catkin_LIBRARIES})
 
