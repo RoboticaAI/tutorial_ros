@@ -188,6 +188,8 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
+#### Turtlesim Files ####
+
 add_executable(1.publicar src/1.publisher.cpp)
 target_link_libraries(1.publicar ${catkin_LIBRARIES})
 
@@ -200,10 +202,24 @@ target_link_libraries(3.teleoperacao ${catkin_LIBRARIES})
 add_executable(4.controleVelocidade src/4.ctrl_velocidade.cpp)
 target_link_libraries(4.controleVelocidade ${catkin_LIBRARIES})
 
-
 add_executable(5.controleX src/5.ctrl_X.cpp)
 target_link_libraries(5.controleX ${catkin_LIBRARIES})
 
 add_executable(6.controlePosicao src/6.ctrl_posicao.cpp)
 target_link_libraries(6.controlePosicao ${catkin_LIBRARIES})
+
+#### Create files ####
+
+add_executable(create.3.teleoperacao src/create.3.teleop.cpp)
+target_link_libraries(create.3.teleoperacao ${catkin_LIBRARIES})
+
+add_executable(create.4.controleVelocidade src/create.4.ctrl_velocidade.cpp)
+target_link_libraries(create.4.controleVelocidade ${catkin_LIBRARIES})
+
+add_executable(create.5.controleX src/create.5.ctrl_X.cpp)
+target_link_libraries(create.5.controleX ${catkin_LIBRARIES})
+
+add_executable(create.6.controlePosicao src/create.6.ctrl_posicao.cpp)
+target_link_libraries(create.6.controlePosicao ${catkin_LIBRARIES})
+
 
