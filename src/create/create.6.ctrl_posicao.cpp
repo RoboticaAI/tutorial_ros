@@ -31,8 +31,8 @@ int main(int argc, char **argv)
   {
     geometry_msgs::Twist msg;
     float posdesejada[2], oridesejada, dist=99, erroorie=99;
-    float tolerance_orie = 0.005, tolerance_pos = 0.05;
-    float Kpos = 10, Korie = 15;
+    float tolerance_orie = 0.02, tolerance_pos = 0.05;
+    float Kpos = 10, Korie = 25;
     float angulo;
 
     system("rqt_plot /pose/x:y &");
@@ -102,7 +102,7 @@ int main(int argc, char **argv)
         ROS_WARN("...Posicao alcancada...");
   }
   
-  sleep(1);
+  sleep(3);
   system("killall rqt_plot");
 
   return 0;
