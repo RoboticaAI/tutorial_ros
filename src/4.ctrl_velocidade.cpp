@@ -27,6 +27,7 @@ int main(int argc, char **argv)
 	system("rosservice call reset");
 
 	getchar();
+	ros::spinOnce();
 
 	for(i=0;i<4;i++){
 	

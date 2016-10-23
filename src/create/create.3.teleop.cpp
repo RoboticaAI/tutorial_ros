@@ -2,7 +2,7 @@
 #include "std_msgs/String.h"
 #include "geometry_msgs/Twist.h"
 #include <iostream>
-#include "kbhit.h"
+#include "../kbhit.h"
 using namespace std;
 
 int main(int argc, char **argv)

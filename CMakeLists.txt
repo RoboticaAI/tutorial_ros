@@ -210,16 +210,16 @@ target_link_libraries(6.controlePosicao ${catkin_LIBRARIES})
 
 #### Create files ####
 
-add_executable(create.3.teleoperacao src/create.3.teleop.cpp)
+add_executable(create.3.teleoperacao src/create/create.3.teleop.cpp)
 target_link_libraries(create.3.teleoperacao ${catkin_LIBRARIES})
 
-add_executable(create.4.controleVelocidade src/create.4.ctrl_velocidade.cpp)
+add_executable(create.4.controleVelocidade src/create/create.4.ctrl_velocidade.cpp)
 target_link_libraries(create.4.controleVelocidade ${catkin_LIBRARIES})
 
-add_executable(create.5.controleX src/create.5.ctrl_X.cpp)
+add_executable(create.5.controleX src/create/create.5.ctrl_X.cpp)
 target_link_libraries(create.5.controleX ${catkin_LIBRARIES})
 
-add_executable(create.6.controlePosicao src/create.6.ctrl_posicao.cpp)
+add_executable(create.6.controlePosicao src/create/create.6.ctrl_posicao.cpp)
 target_link_libraries(create.6.controlePosicao ${catkin_LIBRARIES})
 
 
